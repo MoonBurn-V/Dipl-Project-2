@@ -17,7 +17,6 @@ const FloatingActionBar = ({
     showSubmitTestButton = false,
     testButtonDisabled = false,
     showFinishCourseButton = false,
-    //showAddLessonButtonAfterComplete = false,
     onCreateTest,
     onSubmitTest,
     onFinishCourse

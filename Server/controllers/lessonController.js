@@ -27,6 +27,15 @@ class LessonController {
                 course_id,
                 test
             })
+            
+            // Обновить number_lessons в курсе
+            const { Courses } = require('../models/models')
+            const lessonCount = await Lessons.count({ where: { course_id } })
+            await Courses.update(
+                { number_lessons: lessonCount },
+                { where: { id: course_id } }
+            )
+            
             return res.json(lessons)
         } catch (e) {
             next(ApiError.badRequest(e.message))

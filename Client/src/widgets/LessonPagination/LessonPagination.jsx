@@ -88,7 +88,7 @@ export const LessonPagination = ({orderNumber, courseId, loading}) => {
                     to={next ? `/courses/${courseId}/lesson/${next.order_number}` : "/completed"}
                     className={nextButtonClasses}
                     onClick={handelNextClick}
-                    disabled={!next}
+                    disabled={!canGoNext}
                 >
                     {nextButtonText}
                 </Button>

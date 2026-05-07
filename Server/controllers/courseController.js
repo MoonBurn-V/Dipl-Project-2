@@ -16,7 +16,7 @@ class CourseController {
                 type, 
                 description, 
                 mini_description, 
-                number_lessons = 1, 
+                number_lessons = 0, 
                 rating = 4.50, 
                 status = "В разработке", 
                 created_date,

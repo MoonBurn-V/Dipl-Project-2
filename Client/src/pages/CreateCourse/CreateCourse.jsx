@@ -124,7 +124,7 @@ const CreateCourse = () => {
         const formRef = { current: null }
         setLessonForms(prev => [...prev, { 
             id: newFormId, 
-            orderNumber: lessons.length + 1,
+            orderNumber: lessons.length + tests.length + 1,
             completed: false,
             ref: formRef
         }])
