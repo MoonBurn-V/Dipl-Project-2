@@ -1,0 +1,126 @@
+@use '@/styles/helpers' as *;
+
+.select {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 17px 21px;
+  border-radius: var(--border-radius-s);
+  font-size: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  cursor: pointer;
+
+  @include tablet {
+    font-size: 16px;
+  }
+
+  @include mobile {
+    padding: 12px 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    column-gap: 0.3em;
+    place-items: center;
+    place-content: center;
+  }
+
+  &__icon {
+    display: flex;
+    place-items: center;
+    transition: transform 0.3s ease;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    overflow: hidden;
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      max-height 0.3s ease,
+      max-width 0.6s ease,
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      margin-top 0.2s ease ;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: center;
+
+    &.open {
+      max-width: 300px;
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 10px;
+      transform: translateY(0);
+    }
+  }
+
+  &__option {
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+  &__dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 180px;
+    row-gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__input-wrapper {
+    display: flex;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-white);
+    color: var(--color-white);
+    padding: 4px 6px;
+    outline: none;
+    width: 100%;
+
+    &.error {
+      border-bottom: 2px solid red;
+      color: red;
+
+      &:focus {
+        border-bottom: 2px solid red;
+      }
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      border-bottom: 2px solid var(--color-white);
+    }
+  }
+
+  &__label {
+    margin-top: 5px;
+    margin-right: 6px;
+  }
+}

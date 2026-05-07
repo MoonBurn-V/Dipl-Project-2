@@ -1,0 +1,65 @@
+@use '@/styles/helpers' as *;
+
+.hab {
+    &__user {
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid(70, 35);
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            place-items: center;
+        }
+
+        &-panel {
+            position: relative;
+        }
+
+        &-image {
+            width: fluid(490, 200);
+            height: fluid(490, 200);
+            object-fit: cover;
+            border: var(--border-l);
+            border-radius: 50%;
+
+            @include tablet {
+                width: 280px;
+                height: 280px;
+            }
+
+            @include mobile {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        &-name {
+            @include tablet {
+                font-size: 35px;
+            }
+
+            @include mobile {
+                font-size: 42px;
+            }
+
+            @include mobile-s {
+                font-size: 38px;
+            }
+        }
+
+        &-button1, &-button2 {
+            position: absolute;
+            top: 80%;
+        }
+
+        &-button1 {
+            left: 6%;
+        }
+
+        &-button2 {
+            right: 6%;
+        }
+    }
+}

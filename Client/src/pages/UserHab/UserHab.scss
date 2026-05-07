@@ -1,0 +1,62 @@
+@use '@/styles/helpers' as *;
+
+.hab {
+    padding-top: fluid(180, 100);
+    background-color: var(--color-white);
+
+    &__inner {
+        display: flex;
+        column-gap: fluid(80, 10);
+        justify-content: space-between;
+
+        @include laptop-s {
+            column-gap: 20px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: 70px;
+            place-items: center;
+        }
+    }
+
+    &__courses {
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid(30, 10);
+        margin-top: 15px;
+
+        @include mobile {
+            place-items: center;
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 15px;
+        }
+
+        &-title {
+            font-size: 48px;
+
+            @include mobile-s {
+                font-size: 38px;
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: 70px;
+
+            @include mobile {
+                padding-inline: 50px;
+            }
+
+            @include mobile-s {
+                row-gap: 40px;
+            }
+        }
+    }
+}

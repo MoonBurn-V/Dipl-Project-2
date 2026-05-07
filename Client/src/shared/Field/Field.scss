@@ -1,0 +1,207 @@
+@use '@/styles/helpers' as *;
+
+.field-dark {
+  &__label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--color-white);
+    font-weight: 500;
+    padding-left: 5px;
+  }
+
+  &__input-wrapper {
+    position: relative;
+
+    &:hover {
+      .field-dark__input {
+        box-shadow: var(--shadow-button-hover);
+        transform: translate(4px, 4px);
+      }
+
+      .field-dark__button {
+        transform: translate(4px, 4px);
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 12px;
+    top: 7px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 20px;
+
+    color: var(--color-white);
+    background-color: var(--color-black);
+
+    border: 2px solid var(--color-white);
+    border-radius: var(--border-radius);
+
+    outline: none;
+
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    --shadow-color: rgb(255,255,255);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+
+
+    &.white {
+      border-color: var(--color-white);
+      --shadow-color: rgb(255,255,255);
+    }
+
+    &.red {
+      border-color: red;
+      --shadow-color: red;
+    }
+
+    &.green {
+      border-color: var(--color-green);
+      --shadow-color: rgba(198,248,6,1);
+    }
+
+    &:hover {
+      box-shadow: var(--shadow-button-hover);
+      transform: translate(4px, 4px);
+    }
+
+    &:focus {
+      box-shadow: none;
+      transform: translate(4px, 4px);
+    }
+
+    &:focus + .field-dark__button {
+      transform: translate(4px, 4px);
+    }
+
+    &::placeholder {
+      color: #888;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--color-white);
+
+      box-shadow:
+        0 0 0 1000px var(--color-black) inset,
+        4px 4px 0px var(--shadow-color);
+
+      color: var(--color-white);
+      transform: none;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    &:autofill {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+
+  }
+
+  .field-dark__input:-webkit-autofill + .field-dark__button {
+    transform: none;
+  }
+
+  .field-dark__input-wrapper:hover
+  .field-dark__input:-webkit-autofill + .field-dark__button {
+    transform: none;
+  }
+}
+
+.field-light {
+  &__label {
+    display: block;
+    font-size: fluid(24, 20);
+    margin-bottom: 8px;
+    color: var(--color-black);
+    font-weight: 500;
+    padding-left: 5px;
+  }
+
+  &__input-wrapper {
+    position: relative;
+
+    &:hover,
+    &:focus-within {
+
+      .field-light__input {
+        box-shadow: 4px 4px 0px var(--shadow-color);
+        transform: translate(-4px, -4px);
+      }
+
+      .field-light__button {
+        transform: translate(-4px, -4px);
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 12px;
+    top: 7px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 20px;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-black);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    --shadow-color: rgba(0,0,0,1);
+
+    &.white {
+      border-color: var(--color-black);
+      --shadow-color: rgba(0,0,0,1);
+    }
+
+    &.red {
+      border-color: red;
+      --shadow-color: red;
+    }
+
+    &.green {
+      border-color: rgb(37,158,0);
+      --shadow-color: rgb(37,158,0);
+    }
+
+    &:hover {
+      box-shadow: var(--shadow-button-hover);
+    }
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--color-black);
+      background-color: var(--color-white);
+
+      box-shadow: 4px 4px 0px var(--shadow-color);
+      transform: translate(-4px, -4px);
+
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    &:autofill {
+      background-color: var(--color-white);
+      color: var(--color-black);
+    }
+  }
+}

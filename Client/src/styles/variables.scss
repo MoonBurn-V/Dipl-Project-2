@@ -1,0 +1,73 @@
+@use 'helpers' as *;
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #171717;
+  --color-dark: #000000;
+  --color-blue: #3366FF;
+  --color-blue-hover: #2e5add;
+  --color-green: #C6F806;
+  --color-green-accent: #2CF74C;
+  --color-green-light: #F7FFD9;
+  --color-green-medium: #D8FF40;
+  --color-red: #ff0000;
+  --color-orange: #ff8800;
+
+
+  --shadow-green: 20px 20px 0px rgba(198, 248, 6, 1);
+  --shadow-blue: 20px 20px 0px rgba(51, 102, 255, 1);
+  --shadow-black: 20px 20px 0px rgba(23, 23, 23, 1);
+  --shadow-button: 8px 8px 0px rgba(255, 255, 255, 1);
+  --shadow-blue-mini: 8px 8px 0px rgba(51, 102, 255, 1);
+  --shadow-button-m: 4px 4px 0px rgba(255, 255, 255, 1);
+  --shadow-button-dark: 8px 8px 0px rgba(23, 23, 23, 1);
+  --shadow-button-dark-s: 4px 4px 0px rgba(23, 23, 23, 1);
+  --shadow-button-hover: 0px 0px 0px rgba(255, 255, 255, 1);
+
+  --border-s: var(--border-width-s) solid var(--color-black);
+  --border-blue-s: var(--border-width-s) solid var(--color-blue);
+  --border-blue-l: var(--border-width-l) solid var(--color-blue);
+  --border-l: var(--border-width-l) solid var(--color-black);
+  --border-m: var(--border-width-m) solid var(--color-accent);
+  --border-blue-m: var(--border-width-m) solid var(--color-blue);
+
+  --border-width-xl: 6px;
+  --border-width-l: 4px;
+  --border-width-m: 3px;
+  --border-width-s: 1px;
+
+  --border-radius-l: 250px;
+  --border-radius-m: 100px;
+  --border-radius: 50px;
+  --border-radius-s: 30px;
+  --border-radius-xs: 20px;
+
+  --font-family: 'League Spartan', sans-serif;
+
+  --transition-duration: 0.5s;
+
+  --container-width: 1700px;
+  --container-padding-x: 0px;
+
+  --reristered-width: 486px;
+  --reristered-padding-x: 48px;
+
+
+  --100vw: calc(100vw - var(--scrollbar-width));
+
+  @include laptop-l {
+    --container-width: 1400px;
+  }
+
+  @include laptop {
+    --container-width: 1280px;
+  }
+
+  @include laptop-s {
+    --container-width: 1150px;
+  }
+
+    @include tablet {
+    --container-width: 900px;
+  }
+}

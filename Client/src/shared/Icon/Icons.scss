@@ -1,0 +1,660 @@
+@use '@/styles/helpers' as *;
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+
+    &::after {
+        --size: 24px;
+
+        @include square(var(--size));
+
+        content: '';
+        flex-shrink: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include laptop {
+            --size: 20px;
+        }
+    }
+
+    &--profile{
+        &::after{
+            background-image: url('/assets/icon/Profile.svg');
+        }
+    }
+
+    &--Plus{
+        &::after{
+            --size: 40px;
+
+            background-image: url('/assets/icon/Plus.svg');
+        }
+    }
+
+    &--Exit{
+        &::after{
+            --size: 60px;
+
+            @include tablet {
+                --size: 45px;
+            }
+
+            @include mobile-s {
+                --size: 28px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/exit.svg');
+        }
+    }
+
+    &--Edit{
+        &::after{
+            --size: 60px;
+
+            @include tablet {
+                --size: 45px;
+            }
+
+            @include mobile-s {
+                --size: 28px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Edit.svg');
+        }
+    }
+
+    &--Trash{
+        &::after{
+            --size: 60px;
+
+            @include tablet {
+                --size: 45px;
+            }
+
+            @include mobile-s {
+                --size: 28px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Trash.svg');
+        }
+    }
+
+    &--arrow-down{
+        &::after{
+            background-image: url('/assets/icon/arrow-down.svg');
+        }
+    }
+
+    &--Sparkle{
+        &::after{
+            --size: 79px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Sparkle.svg');
+
+            @include tablet {
+                --size: 60px;
+            }
+
+            @include mobile {
+                --size: 50px;
+            }
+        }
+    }
+
+    &--SparkleBlack{
+        &::after{
+            --size: 65px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/SparkleBlack.svg');
+
+            @include tablet {
+                --size: 50px;
+            }
+        }
+    }
+
+    &--Stars{
+        &::after{
+            --size: 87px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Stars.svg');
+        }
+    }
+
+    &--GreenStar{
+        &::after{
+            --size: #{fluid(80, 30)};
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/GreenStar1.svg');
+        }
+    }
+
+    &--Curl-arrow{
+        &::after{
+            --size: #{fluid(180, 50)};
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Curl-arrow.svg');
+        }
+    }
+
+    &--Underline{
+        &::after{
+            width: 85px;
+            height: 50px;
+
+            background-image: url('/assets/icon/Underline.svg');
+        }
+    }
+
+    &--GreenStarShadow{
+        &::after {
+            --size: #{fluid(100, 40)};
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/GreenStarShadow.svg');           
+        }
+    }
+
+    &--Ellipse{
+        &::after{
+            --size: 160px;
+
+            @include tablet {
+                --size: 135px;
+            }
+
+            @include mobile-s {
+                --size: 110px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Ellipse.svg');       
+        }
+    }
+
+    &--Ellipse1{
+        &::after{
+            --size: 70px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Ellipse.svg');       
+        }
+    }
+
+    &--Ellipse2{
+        &::after{
+            --size: 62px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Ellipse.svg');       
+        }
+    }
+
+    &--Ellipse3{
+        &::after{
+            --size: 32px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Ellipse.svg');       
+        }
+    }
+
+    &--EllipseOrbit{
+        &::after {
+            --size: 140px;
+
+            @include tablet {
+                --size: 125px;
+            }
+
+            @include mobile-s {
+                --size: 100px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/EllipseOrbit.svg');        
+        }
+    }
+
+    &--EllipseGroup{
+        &::after {
+            --size: 250px;
+
+            @include tablet {
+                --size: 230px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/EllipseGroup.svg');           
+        }
+    }
+
+    &--Object{
+        &::after {
+            --size: 100px;
+
+            @include tablet {
+                --size: 90px;
+            }
+
+            @include mobile-s {
+                --size: 75px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Object.svg');           
+        }
+    }
+
+    &--Squares{
+        &::after {
+            --size: 60px;
+
+            @include mobile {
+                --size: 40px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Squares.svg');           
+        }
+    }
+
+    &--StarInGreen{
+        &::after {
+            --size: 50px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/StarInGreen.svg');           
+        }
+    }
+
+    &--StarInDark{
+        &::after {
+            --size: 50px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/StarInDark.svg');           
+        }
+    }
+
+    &--EllipseVoid{
+        &::after {
+            --size: 200px;
+
+            @include mobile {
+                --size: 150px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/EllipseVoid.svg');           
+        }
+    }
+
+    &--EllipseGreen{
+        &::after {
+            --size: 200px;
+
+            @include mobile {
+                --size: 150px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/EllipseGreen.svg');           
+        }
+    }
+
+    &--EllipseBlue{
+        &::after {
+            --size: 200px;
+
+            @include mobile {
+                --size: 150px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/EllipseBlue.svg');           
+        }
+    }
+
+    &--BlueStars{
+        &::after {
+            --size: 200px;
+
+            @include mobile {
+                --size: 170px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/BlueStars.svg');           
+        }
+    }
+
+    &--BlueStar{
+        &::after {
+            --size: 200px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/BlueStar.svg');           
+        }
+    }
+
+    &--BlueArrow{
+        &::after {
+            --size: 150px;
+
+            @include laptop {
+                --size: 90px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/BlueArrow.svg');           
+        }
+    }
+
+    &--ClosedEye-W{
+        &::after {
+            --size: 25px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/ClosedEye-W.svg');     
+        }
+    }
+
+    &--OpenEye-W{
+        &::after {
+            --size: 25px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/OpenEye-W.svg');
+        }
+    }
+
+    &--ClosedEye{
+        &::after {
+            --size: 25px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/ClosedEye.svg');     
+        }
+    }
+
+    &--OpenEye{
+        &::after {
+            --size: 25px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/OpenEye.svg');
+        }
+    }
+
+    &--search-md{
+        &::after {
+            --size: 25px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/search-md.svg');
+        }
+    }
+
+    &--Chevron{
+        &::after {
+            --size: 24px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Chevron.svg');
+        }
+    }
+
+    &--GoldStar{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/GoldStar.svg');
+        }
+    }
+
+    &--arrow-left{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/arrow-left.svg');
+        }
+    }
+
+    &--arrow-right{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/arrow-right.svg');
+        }
+    }
+
+    &--VK{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/VK.svg');
+        }
+    }
+
+    &--Yandex{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Yandex.svg');
+        }
+    }
+
+    &--OK{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/OK.svg');
+        }
+    }
+
+    &--TG{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/TG.svg');
+        }
+    }
+
+    &--WA{
+        &::after {
+            --size: 30px;
+
+            @include mobile {
+                --size: 24px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/WA.svg');
+        }
+    }
+
+    &--play{
+        &::after {
+            --size: 60px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/play.svg');
+        }
+    }
+
+    &--pause{
+        &::after {
+            --size: 60px;
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/pause.svg');
+        }
+    }
+
+    &--Achievements-1{
+        &::after {
+            --size: 160px;
+
+            @include laptop {
+                --size: 150px;
+            }
+
+            @include tablet {
+                --size: 90px;
+            }
+
+            @include mobile {
+                --size: 110px;
+            }
+
+            @include mobile-s {
+                --size: 65px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Achievements-1.svg');
+        }
+    }
+
+    &--Achievements-2{
+        &::after {
+            --size: 160px;
+
+            @include laptop {
+                --size: 150px;
+            }
+
+            @include tablet {
+                --size: 90px;
+            }
+
+            @include mobile {
+                --size: 110px;
+            }
+
+            @include mobile-s {
+                --size: 65px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Achievements-2.svg');
+        }
+    }
+
+    &--Achievements-3{
+        &::after {
+            --size: 160px;
+
+            @include laptop {
+                --size: 150px;
+            }
+
+            @include tablet {
+                --size: 90px;
+            }
+
+            @include mobile {
+                --size: 110px;
+            }
+
+            @include mobile-s {
+                --size: 65px;
+            }
+
+            @include square(var(--size));
+
+            background-image: url('/assets/icon/Achievements-3.svg');
+        }
+    }
+}

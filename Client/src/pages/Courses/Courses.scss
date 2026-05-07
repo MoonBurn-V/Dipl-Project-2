@@ -1,0 +1,19 @@
+@use '@/styles/helpers' as *;
+
+.courses {
+    width: 100%;
+    background-color: var(--color-white);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+        justify-content: center;
+        align-items: flex-start;
+        place-items: center;
+
+        @include tablet {
+            padding-inline: 10px;
+        }
+    }
+}

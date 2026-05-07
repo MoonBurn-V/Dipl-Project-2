@@ -1,0 +1,18 @@
+@use '@/styles/helpers' as *;
+
+.test {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid(50, 20);
+
+        @include tablet {
+            padding-inline: 10px;
+        }
+    }
+
+    &__button {
+        //margin-top: 50px;
+        width: fit-content;
+    }
+}

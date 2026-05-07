@@ -1,0 +1,19 @@
+@use '@/styles/helpers' as *;
+
+.hero-secondary {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    width: 100%;
+    height: fluid(500, 350);
+    place-items: center;
+    place-content: center;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__subtitle {
+        color: var(--color-green);
+        //margin-bottom: -1.5%;
+    }
+}

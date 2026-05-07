@@ -1,0 +1,21 @@
+const Router = require('express')
+const router = new Router()
+const userRouter = require('./userRouter')
+const courseRouter = require('./courseRouter')
+const lessonRouter = require('./lessonRouter')
+const testRouter = require('./testRouter')
+const payRouter = require('./payRouter')
+const reviewRouter = require('./reviewRouter')
+const courseUserRouter = require('./courseUserRouter')
+const userProgressRouter = require('./userProgressRouter')
+
+router.use('/user', userRouter)
+router.use('/course', courseRouter)
+router.use('/lesson', lessonRouter)
+router.use('/test', testRouter)
+router.use('/pay', payRouter)
+router.use('/review', reviewRouter)
+router.use('/course-user', courseUserRouter)
+router.use('/userProgress', userProgressRouter)
+
+module.exports = router

@@ -1,0 +1,17 @@
+@use '@/styles/helpers' as *;
+
+.lesson-pagination {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding-inline: fluid(100, 20);
+
+        @include mobile-s {
+            column-gap: 5px;
+        }
+    }
+
+    &__button {
+        text-align: center;
+    }
+}

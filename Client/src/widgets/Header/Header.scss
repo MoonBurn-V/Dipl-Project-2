@@ -1,0 +1,123 @@
+@use '@/styles/helpers' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-block: fluid(20, 5);
+  background-color: var(--color-black);
+  z-index: 100;
+
+  @include tablet {
+    border-bottom: var(--border-header);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 16px;
+
+    @include laptop-l {
+      padding-inline: 20px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      padding-inline: 10px;
+    }
+  }
+
+  &__overlay {
+    place-content: center;
+
+    &.active{
+      pointer-events: auto;
+      user-select: auto;
+      filter: none !important;
+      transform: translateY(0);
+      opacity: 1;
+      max-height: 250px;
+      padding-top: 12px;
+    }
+
+    @include tablet{
+      transition: transform var(--transition-duration) ease-out, 
+                  opacity var(--transition-duration) ease-out, 
+                  max-height var(--transition-duration) ease-out;
+      transform: translateY(-100%);
+      opacity: 0;
+      max-height: 0; 
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      align-items: center;
+    }
+  }
+
+  &__menu {
+    place-content: center;
+    border: 1px solid var(--color-green);
+    border-radius: var(--border-radius);
+    padding: 20px 36px;
+
+
+    @include tablet {
+      overflow-y: auto;
+      display: flex;
+      height: 100%;
+      border-radius: 25px;
+      padding: 20px 29px;
+      overflow-y: hidden;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 100px;
+      line-height: normal;
+
+      @include tablet {
+        flex-direction: column;
+        row-gap: 16px;
+        margin-block: auto;
+      }
+    }
+
+    &-link {
+      color: var(--color-white);
+      font-size: 21px;
+      font-weight: 500;
+
+      @include tablet {
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: var(--color-green);
+      }
+
+      &.active {
+        color: var(--color-green);
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+  }
+}
+
+.BurgerButton-container {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}

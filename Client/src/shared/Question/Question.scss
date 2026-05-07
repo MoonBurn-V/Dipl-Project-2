@@ -1,0 +1,111 @@
+@use '@/styles/helpers' as *;
+
+.question {
+    &__title {
+        max-width: 900px;
+        margin-bottom: 10px;
+
+        &.error {
+            color: red;
+        }
+    }
+
+    &__answers {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__answer {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: border-color 0.2s, background 0.2s;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        input:checked + .question__span.radio {
+            border-color: var(--color-blue);
+
+            &::after {
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: var(--color-blue);
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        input:checked + .question__span.checkbox {
+            border-color: var(--color-blue);
+            background: var(--color-blue);
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 4px;
+                height: 8px;
+                border: solid #fff;
+                border-width: 0 2px 2px 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -60%) rotate(45deg);
+            }
+        }
+    }
+
+    &__input {
+        max-width: 500px;
+        padding: 12px 16px;
+        font-size: 20px;
+        color: var(--color-black);
+        background-color: var(--color-white);
+        border: 2px solid var(--color-black);
+        border-radius: var(--border-radius);
+        box-shadow: 6px 6px 0 rgb(0 0 0);
+        outline: none;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            box-shadow: var(--shadow-button-hover);
+            transform: translate(4px, 4px);
+        }
+
+        &:focus {
+            box-shadow: none;
+            transform: translate(4px, 4px);
+        }
+
+        &::placeholder {
+            color: #888;
+        }
+    }
+
+    &__span {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #999;
+        position: relative;
+        flex-shrink: 0;
+        margin-top: 2px;
+
+        &.radio {
+            border-radius: 50%;
+        }
+
+        &.checkbox {
+            border-radius: 4px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+    }
+}

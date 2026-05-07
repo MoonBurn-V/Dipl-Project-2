@@ -1,0 +1,255 @@
+@use '@/styles/helpers' as *;
+
+.audience {
+    width: 100%;
+    background-color: var(--color-white);
+
+    &__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 90px;
+
+        @include mobile-s {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title {
+        width: 45%;
+
+        @include laptop-l {
+            width: 40%;
+        }
+
+        @include mobile {
+            width: 60%;
+        }
+
+        @include mobile-s {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__ellipse-group {
+        display: flex;
+        padding-left: fluid(160, 10);
+
+        @include laptop {
+            padding: 0;
+        }
+
+        @include mobile {
+            padding-left: 20px;
+        }
+
+        @include mobile-s {
+            display: none;
+        }
+    }
+
+    &__ellipse-group > * {
+        will-change: transform, opacity;
+        opacity: 0;
+        margin-right: -100px;
+    }
+
+    &__void {
+        z-index: 15;
+    }
+
+    &__green {
+        z-index: 10;
+    }
+
+    &__blue {
+        z-index: 5;
+    }
+
+    &__blue-stars {
+        position: absolute;
+        top: 140px;
+        right: 250px;
+
+        @include laptop-l {
+            right: 200px;
+            rotate: -20deg;
+        }
+
+        @include mobile {
+            top: 90px;
+            right: 108px;
+        }
+
+        @include mobile-s {
+            display: none;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        left: -15%;
+        bottom: -10%;
+        rotate: 40deg;
+
+        @include mobile-s {
+            left: unset;
+            right: -2%;
+            bottom: -20%;
+            transform: rotate(-25deg) scaleX(-1);
+        }
+    }
+
+    &__content {
+        display: flex;
+        column-gap: 40px;
+        justify-content: space-between;
+
+        @include mobile {
+            padding-right: 20px;
+            justify-content: center;
+        }
+
+        @include mobile-s {
+            flex-direction: column;
+            row-gap: 30px;
+            padding-inline: 30px;
+        }
+    }
+
+    &__content > * {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+
+        @include mobile-s {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        padding: 30px 40px;
+        border-radius: var(--border-radius-s);
+        box-shadow: var(--shadow-black);
+
+        @include mobile-s {
+            padding: 20px 30px;
+        }
+
+        &.blue {
+            position: relative;
+            margin-top: 110px;
+            color: var(--color-white);
+            background-color: var(--color-blue);
+
+            @include mobile-s {
+                margin: 0;
+            }
+        }
+
+        &.green {
+            background-color: var(--color-green);
+        }
+
+        &-title {
+            margin-bottom: 15px;
+
+            @include mobile-s {
+                text-align: center;
+            }
+        }
+
+        &-text {
+            @include fluid-text(28, 16);
+        }
+    }
+
+    &__image-container {
+        position: relative;
+        width: fluid(730, 230);
+        height: fluid(460, 100);
+
+        @include laptop {
+            width: 390px;
+            height: 600px;
+        }
+
+        @include mobile {
+            width: 340px;
+            height: 500px;
+        }
+
+        @include mobile-s {
+            display: none;
+        }
+
+        &.left {
+            margin-top: 140px;
+        }
+
+        &.right {
+            margin-top: 110px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius-s);
+        border-color: var(--color-blue);
+        box-shadow: var(--shadow-blue);
+
+        &.left {
+            rotate: -2deg;
+        }
+
+        &.right {
+            rotate: 2deg;
+        }
+
+        @include laptop {
+            display: none;
+        }
+    }
+
+    &__image-m {
+        display: none;
+
+        @include laptop {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--border-radius-s);
+            border: var(--border-blue-m);
+            box-shadow: var(--shadow-blue);
+            object-fit: cover;
+        }
+
+        @include mobile {
+            box-shadow: none;
+        }
+
+        &.left {
+            rotate: -2deg;
+        }
+
+        &.right {
+            rotate: 2deg;
+        }
+
+    }
+
+    &__button-container {
+        display: flex;
+        padding-right: 40%;
+        justify-content: end;
+        margin-top: 60px;
+
+        @include mobile-s {
+            justify-content: center;
+            padding: 0;
+        }
+    }
+}

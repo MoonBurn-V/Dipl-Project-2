@@ -1,0 +1,32 @@
+@use '@/styles/helpers' as *;
+
+.course-completed {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    background-color: white;
+    place-items: center;
+    place-content: center;
+    padding-top: fluid(180, 80);
+    padding-inline: 15px;
+
+    &__title {
+        font-size: fluid(70, 30);
+        text-align: center;
+    }
+
+    &__image {
+        width: fluid(1000, 300);
+        border: 2px solid var(--color-black);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-black);
+
+        @include mobile {
+            border-radius: var(--border-radius-xs);
+        }
+    }
+
+    &__button {
+        margin-top: 25px;
+    }
+}

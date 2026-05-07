@@ -1,0 +1,31 @@
+@use '@/styles/helpers' as *;
+
+.pagination {
+    display: flex;
+    column-gap: 20px;
+    place-items: center;
+
+    &__pages {
+        display: flex;
+        column-gap: 10px;
+        padding: 10px 15px;
+        font-size: fluid(19, 14);
+        font-weight: 600;
+        margin-top: 3px;
+        border: 2px solid var(--color-dark);
+        border-radius: var(--border-radius);
+    }
+
+    &__page {
+        cursor: pointer;
+        line-height: none !important;
+        
+        &:hover {
+            color: var(--color-blue);
+        }
+
+        &.active {
+            color: var(--color-blue);
+        }
+    }
+}

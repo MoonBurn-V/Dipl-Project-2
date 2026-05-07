@@ -1,0 +1,44 @@
+@use '@/styles/helpers' as *;
+
+.hab {
+    &__achievements {
+        @include mobile {
+            place-items: center;
+        }
+
+        &-title {
+            position: relative;
+            width: fit-content;
+            margin-bottom: -30px;
+            background-color: var(--color-white);
+            z-index: 10;
+
+            @include tablet {
+                font-size: 28px;
+                margin-bottom: -20px;
+            }
+
+            @include mobile {
+                font-size: 38px;
+                margin-bottom: -15px;
+            }
+
+            @include mobile-s {
+                font-size: 24px;
+            }
+        }
+
+        &-list {
+            position: relative;
+            display: flex;
+            column-gap: 10px;
+            padding: 10px 20px;
+            width: fit-content;
+            border: var(--border-l);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-button-dark);
+            overflow: hidden;
+            z-index: 1;
+        }
+    }
+}

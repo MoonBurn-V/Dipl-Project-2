@@ -1,0 +1,103 @@
+@use '@/styles/helpers' as *;
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 390px);
+    gap: 60px 50px;
+
+    @include laptop-s {
+        grid-template-columns: repeat(2, 350px);
+    }
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 350px);
+        gap: 30px;
+    }
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+}
+
+.course-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: fluid(35, 25) fluid(25, 15);
+    border: var(--border-s);
+    border-radius: var(--border-radius-s);
+    box-shadow: var(--shadow-button-dark);
+
+    &__image {
+        max-width: fluid(350, 310);
+        min-height: 230px;
+        border: 2px solid var(--color-black);
+        border-radius: var(--border-radius-s);
+        object-fit: cover;
+        align-self: center;
+    }
+
+    &__title {
+        font-weight: 600;
+    }
+
+    &__complexity {
+        position: absolute;
+        right: 15px;
+        top: -20px;
+        padding: 8px 12px;
+        font-size: fluid(20, 16);
+        border-radius: var(--border-radius);
+
+        &.green {
+            color: green;
+            background-color: var(--color-green);
+        }
+
+        &.orange {
+            color: orangered;
+            background-color: orange;
+        }
+
+        &.red {
+            color: rgb(136, 0, 0);
+            background-color: rgb(255, 0, 0);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-top: auto;
+        padding-top: 10px;
+        justify-content: space-between;
+        font-size: fluid(24, 18);
+        font-weight: 600;
+    }
+
+    &__rating {
+        display: flex;
+        column-gap: 5px;
+        place-items: center;
+        padding-right: 10px;
+    }
+
+    &__price {
+        font-size: fluid(24, 18);
+        font-weight: 600;
+        color: green;
+        padding-top: 10px;
+    }
+
+    &__number {
+        color: gold;
+    }
+
+    &__description {
+        max-width: 350px;
+        opacity: 0.8;
+        padding-top: 10px;
+    }
+}

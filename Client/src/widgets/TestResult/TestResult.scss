@@ -1,0 +1,73 @@
+@use '@/styles/helpers' as *;
+
+.test-result { 
+
+    &__results {
+        place-items: center;
+    }
+
+    &__circle {
+        --value: 1;
+        --progress: 1;
+        --corner: calc(1% * var(--progress, 0));
+
+        --color: if(
+            style(--progress <= 33): var(--color-red);
+            style(--progress <= 66): var(--color-orange);
+            else: var(--color-green-accent);
+        );
+
+        position: relative;
+        width: 190%;
+        height: 210px;
+        background-color: var(--color-white);
+
+        animation: progress 3s forwards;
+
+        background-image: 
+            radial-gradient(
+                circle,
+                var(--color-black) 0% 27%,
+                transparent 28% 50%,
+                var(--color-black) 51%
+            ),
+            conic-gradient(
+                var(--color) 0% var(--corner),
+                transparent var(--corner)
+            );
+    }
+    
+    &__circle-percent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center; 
+    } 
+    
+    &__result-comparison { 
+        margin-top: 20px;
+        font-size: fluid(22, 16); 
+    } 
+    
+    &__buttons { 
+        display: flex; 
+        flex-direction: 
+        column; 
+        row-gap: 25px; 
+        margin-top: 30px; 
+        place-items: center; 
+    } 
+}
+
+@property --progress {
+    inherits: true;
+    initial-value: 0;
+    syntax: "<number>";
+}
+
+@keyframes progress {
+    to {
+        --progress: var(--value);
+    }
+}

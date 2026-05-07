@@ -1,0 +1,15 @@
+@use '@/styles/helpers' as *;
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    &__input {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        accent-color: var(--color-green);
+    }
+}

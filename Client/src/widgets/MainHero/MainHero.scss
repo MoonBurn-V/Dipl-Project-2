@@ -1,0 +1,530 @@
+@use '@/styles/helpers' as *;
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-black);
+    overflow: hidden;
+
+    display: flex;
+    place-items: end;
+    padding-block: 0;
+
+    @include mobile {
+        height: 750px;
+    }
+
+    @include mobile-s {
+        padding-block: 40px;
+    }
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 87%;
+        background-color: var(--color-black);
+
+        @include laptop-l {
+            padding-inline: 15px;
+        }
+
+        @include tablet {
+            place-items: center;
+        }
+
+        @include mobile {
+            height: 100%;
+        }
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__header {
+        position: relative;
+        width: 65%;
+        place-items: start;
+        padding-top: fluid(60, 10);
+        z-index: 90;
+
+        @include laptop {
+            width: 80%;
+            padding-top: 20px;
+        }
+
+        @media (width <= 1360px) {
+            width: 70%;
+        }
+
+        @include tablet {
+            place-items: center;
+        }
+
+        @include mobile {
+            width: 100%;
+            padding-top: 90px;
+        }
+
+        @include mobile-s {
+            padding-top: 50px;
+        }
+
+        &-stars {
+            position: absolute;
+            bottom: 23px;
+
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &-arrow {
+            position: absolute;
+            left: 300px;
+            bottom: -140px;
+            rotate: 25deg;
+
+            @include laptop-l {
+                display: none;
+            }
+
+            @include tablet {
+                display: block;
+                left: 490px;
+                bottom: -15px;
+            }
+
+            @include mobile {
+                left: 530px;
+            }
+        }
+    }
+
+    &__title {
+        color: var(--color-white);
+        @include fluid-text(80, 31);
+        font-weight: 900;
+
+        @include tablet {
+            text-align: center;
+        }
+
+        &-word {
+            display: inline-block;
+            color: var(--color-dark);
+            background-color: var(--color-green);
+            padding: 10px 30px;
+            border-radius: var(--border-radius);
+            transform: rotate(-5deg);
+
+            &.secondary {
+                transform: rotate(5deg);
+            }
+
+            @include mobile {
+                padding: 5px 20px;
+            }
+        }
+
+        &-star {
+            display: none;
+
+            @include tablet {
+                display: block;
+                position: absolute;
+                top: -20px;
+                left: -20px;
+            }
+
+            @include mobile {
+                top: -10px;
+                left: -15px;
+            }
+        }
+    }
+
+    &__span {
+        padding-left: fluid(150, 10);
+
+        @include tablet {
+            padding-left: 0;
+        }
+
+        &-icon {
+            display: none;
+
+            @include mobile-s {
+                display: block;
+                position: absolute;
+                bottom: -40px;
+                right: 5px;
+                rotate: -7deg;
+            }
+        }
+    }
+
+    &__subtitle {
+        color: var(--color-green);
+        @include fluid-text(30, 18);
+        font-weight: 500;
+    }
+
+    &__button {
+        &-container {
+            position: absolute;
+            bottom: fluid(-100, -70);
+            left: 60px; 
+
+            @include tablet {
+                position: relative;
+                left: unset;
+                bottom: unset;
+
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+            }
+
+            @include mobile-s {
+                margin-top: 25px;
+            }
+        }
+
+
+        &-icon {
+            position: absolute;
+            top: -40px;
+            left: -55px;
+
+            @include tablet {
+                top: -30px;
+                left: -35px;
+            }
+        }
+    }
+
+    &__image-container-1, &__image-container-2, &__image-container-3 {
+        position: absolute;
+    }
+
+    &__image-container-1 {
+        top: 1px;
+        right: 270px;
+        width: fluid(380, 80);
+        height: fluid(250, 50);
+
+        @include laptop {
+            right: 110px;
+        }
+
+        @include tablet {
+            width: 250px;
+            height: 200px;
+            top: 15%;
+            left: -13%;
+            rotate: -10deg;
+        }
+
+        @include mobile {
+            width: 250px;
+            height: 200px;
+            top: 30%;
+            left: -10%;
+        }
+
+        @include mobile-s {
+            width: 220px;
+            height: 150px;
+            top: 55%;
+            left: -20%;
+        }
+    }
+
+    &__image-container-2 {
+        top: fluid(200, 50);
+        right: 30px;
+        width: fluid(550, 100);
+        height: fluid(350, 50);
+
+        @include laptop {
+            width: 319px;
+            height: 209px;
+        }
+
+        @include tablet {
+            top: 20%;
+            right: -22%;
+            rotate: -13deg;
+        }
+
+        @include mobile {
+            width: 240px;
+            height: 190px;
+            top: 45%;
+            right: -10%;
+            rotate: -13deg;
+        }
+
+        @include mobile-s {
+            width: 220px;
+            height: 170px;
+            top: 80%;
+            right: -25%;
+            rotate: 13deg;
+        }
+    }
+
+    &__image-container-3 {
+        top: 420px;
+        right: fluid(540, 100);
+        width: fluid(363, 63);
+        height: fluid(244, 44);
+
+        @include laptop {
+            top: 320px;
+            right: 300px;
+            width: 363px;
+            height: 244px;
+        }
+
+        @include tablet {
+            width: 220px;
+            height: 160px;
+            top: 50%;
+            left: -14%;
+            right: unset;
+            rotate: 7deg;
+        }
+
+        @include mobile {
+            width: 250px;
+            height: 170px;
+            top: 55%;
+            left: 30%;
+        }
+
+        @include mobile-s {
+            display: none;
+        }
+    }
+
+    &__image1, &__image2, &__image3 {
+        position: relative;
+        border-radius: var(--border-radius-s);
+        border: 1px solid var(--color-green);
+        z-index: 50;
+
+        @include tablet {
+            border-radius: var(--border-radius-xs);
+        }
+    }
+
+    &__image1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image3 {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image-panel1, &__image-panel2, &__image-panel3 {
+        position: absolute;
+        background-color: var(--color-green);
+        border-radius: var(--border-radius-s);
+        top: 0;
+        opacity: 1;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__image-panel1 {
+        width: 94%;
+        height: 98%;
+        rotate: -7deg;
+        top: 5px;
+        right: 50px;
+
+        @include laptop {
+            rotate: 358deg;
+        }
+
+        @include tablet {
+            top: 1px;
+            right: -25px;
+        }
+    }
+
+    &__image-panel2 {
+        width: 90%;
+        height: 95%;
+        rotate: 17deg;
+        top: 20px;
+        left: 90px;
+
+        @include laptop {
+            left: 50px;
+        }
+
+        @include tablet {
+            top: 1px;
+            left: unset;
+            right: 50px;
+            rotate: 10deg; 
+        }
+    }
+
+    &__image-panel3 {
+        width: 85%;
+        height: 98%;
+        rotate: -15deg;
+
+        @include tablet {
+            top: -0px;
+            left: 50px;
+            rotate: 11deg;
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        bottom: fluid(40, 5);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-white);
+
+        @include tablet{
+            display: none;
+        }
+
+        &-student {
+            display: flex;
+            column-gap: 25px;
+            place-items: center;
+
+            p {
+                @include fluid-text(24, 16);
+                font-weight: 400;
+            }
+        }
+
+        &-students {
+            width: fluid(200, 100);
+
+            @include laptop {
+                display: none;
+            }
+        }
+
+        &-percent {
+            width: fluid(200, 100);
+        }
+
+        &-motivation {
+            @include fluid-text(24, 16);
+            text-align: right;
+
+            @include laptop-l {
+                padding-right: 25px;
+            }
+        }
+    }
+
+    &__bottom-mobile {
+        display: none;
+
+        @include tablet {
+            display: block;
+            color: var(--color-white);
+        }
+    }
+
+    &__mobile-students {
+
+        @include tablet {
+            position: absolute;
+            top: 85%;
+            right: 1%;
+            border: 1px solid var(--color-green);
+            border-radius: var(--border-radius);
+            padding: 10px 15px;
+        }
+
+        @include mobile {
+            right: -5%;
+        }
+
+        @include mobile-s {
+            position: absolute;
+            top: 57%;
+            right: -13%;
+            color: var(--color-white);
+            border: 1px solid var(--color-green);
+            border-radius: var(--border-radius);
+            padding: 10px 15px;
+        }
+
+        p {
+            font-size: fluid(24, 14);
+            width: 350px;
+            text-align: center;
+
+            @include mobile {
+                text-align: left;
+            }
+
+            @include mobile-s {
+                width: 220px;
+            }
+        }
+    }
+
+    &__mobile-help {
+
+        @include tablet {
+            position: absolute;
+            top: 85%;
+            left: 1%;
+            border: 1px solid var(--color-green);
+            border-radius: var(--border-radius);
+            padding: 10px 15px;
+        }
+
+        @include mobile {
+            left: -5%;
+        }
+
+        @include mobile-s {
+            position: absolute;
+            top: 80%;
+            left: -30px;
+            border: 1px solid var(--color-green);
+            border-radius: var(--border-radius);
+            padding: 10px 15px;
+        }
+
+        p {
+            font-size: fluid(24, 14);
+            width: 350px;
+            text-align: center;
+
+            @include mobile {
+                text-align: right;
+            }
+
+            @include mobile-s {
+                width: 230px;
+            }
+        }
+    }
+}

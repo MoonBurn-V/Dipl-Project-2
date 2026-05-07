@@ -1,0 +1,26 @@
+@use '@/styles/helpers' as *;
+
+.user-form {
+    &__data {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        width: 50%;
+        min-width: 310px;
+        border: 2px solid var(--color-black);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-black);
+        padding: 20px 25px;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    &__button {
+        width: fit-content;
+        align-self: end;
+    }
+}

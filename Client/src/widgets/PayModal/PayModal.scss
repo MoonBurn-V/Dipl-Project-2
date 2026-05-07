@@ -1,0 +1,14 @@
+@use '@/styles/helpers' as *;
+
+.pay {
+    &__QR-kod {
+        max-width: 350px;
+        border: 2px solid var(--color-green);
+        border-radius: var(--border-radius-s);
+        margin-bottom: 40px;
+
+        @include mobile-s {
+            width: 80%;
+        }
+    }
+}

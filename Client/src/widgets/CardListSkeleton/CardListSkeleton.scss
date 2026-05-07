@@ -1,0 +1,24 @@
+@use '@/styles/helpers' as *;
+
+.skeleton-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: fluid(35, 25) fluid(25, 15);
+    border: var(--border-s);
+    border-radius: var(--border-radius-s);
+
+    &__image {
+        max-width: fluid(350, 310);
+        min-height: 230px;
+        border: 2px solid var(--color-black);
+        border-radius: var(--border-radius-s);
+    }
+
+    &__complexity {
+        position: absolute;
+        right: 15px;
+        top: -20px;
+    }
+}
