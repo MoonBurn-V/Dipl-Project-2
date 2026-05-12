@@ -1,13 +1,19 @@
 import './CourseCompleted.scss'
 import Button from '@/shared/Button/Button'
+import { useLocation } from 'react-router-dom'
 
 const CourseCompleted = () => {
+    const { state } = useLocation()
+    const fullName = state?.fullName || ''
+    const firstName = fullName.split(' ')[0] || ''
+    const imagePath = firstName === 'Петров' ?  '/assets/images/castom-02.png' : '/assets/images/castom-01.png'
+
     return (
         <section className='course-completed'>
             <h1 className='course-completed__title'>Поздравляем! Вы успешно<br/>завершили курс!</h1>
             <img 
-                className="course-completed__image" 
-                src="/assets/images/sert1.png" 
+                className="course-completed__image"
+                src={imagePath}
                 alt="Ваш сертификат" 
             />
             <a href="/assets/images/sert1.png" download="certificate.png">

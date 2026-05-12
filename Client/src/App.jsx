@@ -3,6 +3,7 @@ import { AuthProvider } from './providers/AuthContext'
 import { UserCoursesProvider } from './providers/UserCoursesProvider'
 import { TestResultProvider } from './providers/TestResultProvider'
 import { TitleProvider } from './providers/TitleContext'
+import { CertificateProvider } from './providers/CertificateProvider'
 import ProtectedRoute from './providers/ProtectedRoute'
 import Home from './pages/Home/Home'
 import UserHab from './pages/UserHab/UserHab'
@@ -19,6 +20,7 @@ import Layout from './widgets/Layout/Layout'
 import Auth from './widgets/Auth/Auth'
 import { PayModal } from './widgets/PayModal/PayModal'
 import TestResult from './widgets/TestResult/TestResult'
+import { CertificateModal } from './widgets/CertificateModal/CertificateModal'
 import { SkeletonTheme } from 'react-loading-skeleton'
 
 
@@ -28,32 +30,35 @@ function App() {
       <AuthProvider>
         <UserCoursesProvider>
           <TestResultProvider>
-            <TitleProvider>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<Home />} />
-                  <Route path="about" element={<About />} />
-                  <Route path="courses" element={<Courses />} />
-                  <Route path="courses/:id" element={<Course />} />
-                  <Route path="contacts" element={<Contacts />} />
-                  <Route element={<ProtectedRoute />}>
-                    <Route path="courses/:id/lesson/:order" element={<Lesson />}/>
-                    <Route path="completed/:courseId" element={<CourseCompleted />}/>
-                    <Route path="hab/:id" element={<UserHab />}/>
-                    <Route path="edit-user/:id" element={<EditUser />}/>
+            <CertificateProvider>
+              <TitleProvider>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="courses" element={<Courses />} />
+                    <Route path="courses/:id" element={<Course />} />
+                    <Route path="contacts" element={<Contacts />} />
+                    <Route element={<ProtectedRoute />}>
+                      <Route path="courses/:id/lesson/:order" element={<Lesson />}/>
+                      <Route path="completed/:courseId" element={<CourseCompleted />}/>
+                      <Route path="hab/:id" element={<UserHab />}/>
+                      <Route path="edit-user/:id" element={<EditUser />}/>
+                    </Route>
+                    <Route element={<ProtectedRoute deniedRoles={["Пользователь"]} />}>
+                      <Route path="create-course" element={<CreateCourse />}/>
+                    </Route>
                   </Route>
-                  <Route element={<ProtectedRoute deniedRoles={["Пользователь"]} />}>
-                    <Route path="create-course" element={<CreateCourse />}/>
-                  </Route>
-                </Route>
 
-                <Route path="*" element={<NotFound />}/>
-              </Routes>
+                  <Route path="*" element={<NotFound />}/>
+                </Routes>
 
-              <TestResult />
-              <PayModal/>
-              <Auth />
-            </TitleProvider>
+                <TestResult />
+                <PayModal/>
+                <CertificateModal />
+                <Auth />
+              </TitleProvider>
+            </CertificateProvider>
           </TestResultProvider>
         </UserCoursesProvider>
       </AuthProvider>

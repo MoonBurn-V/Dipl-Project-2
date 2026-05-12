@@ -255,7 +255,8 @@ const TestForm = forwardRef(({ onTestCreate, onCancel, onQuestionsChange, disabl
                     </div>
                 )}
 
-                <div className={creatorClasses}>
+                {!disabled && (
+                    <div className={creatorClasses}>
                     {!currentQuestionType ? (
                         <div className="test-form__type-selector">
                             <span className="test-form__selector-text">Создать вопрос с:</span>
@@ -389,6 +390,7 @@ const TestForm = forwardRef(({ onTestCreate, onCancel, onQuestionsChange, disabl
                         </div>
                     )}
                 </div>
+                )}
             </div>
         </div>
     )

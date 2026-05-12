@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useFetchLesson } from '@/entities/lessons/model/useFetchLesson'
 import { useLessonNavigation } from '../lib/hooks/useLessonNavigation'
 import { UserCoursesContext } from '@/providers/UserCoursesProvider'
+import { CertificateContext } from '@/providers/CertificateProvider'
 import { useContext } from 'react'
 import { useFetchLessonCompleted } from '@/entities/userCourse/model/useFetchLessonCompleted'
 
@@ -16,6 +17,7 @@ export const LessonPagination = ({orderNumber, courseId, loading}) => {
     const { prev, next, canGoNext } = useLessonNavigation(lessons, orderNumber)
     const { getData } = useContext(UserCoursesContext) 
     const { fetchLessonCompleted } = useFetchLessonCompleted()
+    const { openModal } = useContext(CertificateContext)
 
     if (loading) return null
     if (!courseId) return null
@@ -43,7 +45,7 @@ export const LessonPagination = ({orderNumber, courseId, loading}) => {
 
             fetchLessonCompleted(data)
             
-            navigate(`/completed/${courseId}`)
+            openModal(courseId)
             return
         }
 

@@ -108,53 +108,55 @@ const LessonForm = forwardRef(({ onLessonCreate, onCancel, orderNumber, disabled
 
             <div className="lesson-form__paragraphs">
 
-                <div className="lesson-form__paragraph-form">
-                    <div className="field-light">
-                        <label className="field-light__label" htmlFor="paragraph-title">
-                            Название абзаца
-                        </label>
-                        <div className="field-light__input-wrapper">
-                            <input
-                                id="paragraph-title"
-                                className="field-light__input"
-                                type="text"
-                                placeholder="Введите название абзаца"
-                                value={paragraphTitle}
-                                onChange={(e) => setParagraphTitle(e.target.value)}
-                                disabled={disabled}
-                            />
+                {!disabled && (
+                    <div className="lesson-form__paragraph-form">
+                        <div className="field-light">
+                            <label className="field-light__label" htmlFor="paragraph-title">
+                                Название абзаца
+                            </label>
+                            <div className="field-light__input-wrapper">
+                                <input
+                                    id="paragraph-title"
+                                    className="field-light__input"
+                                    type="text"
+                                    placeholder="Введите название абзаца"
+                                    value={paragraphTitle}
+                                    onChange={(e) => setParagraphTitle(e.target.value)}
+                                    disabled={disabled}
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="field-light">
-                        <label className="field-light__label" htmlFor="paragraph-text">
-                            Текст абзаца
-                        </label>
-                        <div className="field-light__input-wrapper">
-                            <textarea
-                                id="paragraph-text"
-                                className="lesson-form__textarea"
-                                placeholder="Введите текст абзаца"
-                                value={paragraphText}
-                                onChange={(e) => setParagraphText(e.target.value)}
-                                disabled={disabled}
-                                rows="4"
-                            />
+                        <div className="field-light">
+                            <label className="field-light__label" htmlFor="paragraph-text">
+                                Текст абзаца
+                            </label>
+                            <div className="field-light__input-wrapper">
+                                <textarea
+                                    id="paragraph-text"
+                                    className="lesson-form__textarea"
+                                    placeholder="Введите текст абзаца"
+                                    value={paragraphText}
+                                    onChange={(e) => setParagraphText(e.target.value)}
+                                    disabled={disabled}
+                                    rows="4"
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <Button
-                        className={clsx("lesson-form__add-button menu-button", {
-                            blue: canAddParagraph && !disabled,
-                            hover: !canAddParagraph || disabled
-                        })}
-                        type="button"
-                        onClick={handleAddParagraph}
-                        disabled={!canAddParagraph || disabled}
-                    >
-                        Добавить абзац
-                    </Button>
-                </div>
+                        <Button
+                            className={clsx("lesson-form__add-button menu-button", {
+                                blue: canAddParagraph && !disabled,
+                                hover: !canAddParagraph || disabled
+                            })}
+                            type="button"
+                            onClick={handleAddParagraph}
+                            disabled={!canAddParagraph || disabled}
+                        >
+                            Добавить абзац
+                        </Button>
+                    </div>
+                )}
 
                 {paragraphs.length > 0 && (
                     <div className="lesson-form__paragraphs-list">
