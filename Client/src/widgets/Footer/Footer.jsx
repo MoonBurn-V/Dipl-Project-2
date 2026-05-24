@@ -1,6 +1,6 @@
 import './Footer.scss'
 import { Link } from 'react-router-dom'
-import Logo from '@/shared/Logo/Logo1'
+import Logo from '@/shared/Logo/Logo'
 import Icon from '@/shared/Icon/Icon'
 
 const Footer = () => {

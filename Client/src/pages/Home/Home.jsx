@@ -43,8 +43,6 @@ const Home = () => {
         ]}
       />
       <Audience />
-
-      <section className="test00"></section>
     </>
   )
 }

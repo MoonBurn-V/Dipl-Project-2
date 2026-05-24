@@ -128,7 +128,8 @@ class CourseController {
             if (req.query.sort && allowedSortFields.includes(req.query.sort)) {
                 order = [[
                     req.query.sort,
-                    req.query.order?.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'
+                    //req.query.order?.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'
+                    req.query.order?.toUpperCase() === 'DESC' ? 'ASC' : 'DESC'
                 ]]
             }
 

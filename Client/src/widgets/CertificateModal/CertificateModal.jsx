@@ -18,23 +18,17 @@ export const CertificateModal = () => {
     }
 
     const handleGetCertificate = () => {
-        // Проверка, что ФИО не пусто
         if (!fullName.trim()) {
             setError('Пожалуйста, введите ФИО')
             return
         }
 
-        // Проверка, что введены минимум два слова (имя и фамилия)
         const nameParts = fullName.trim().split(/\s+/)
         if (nameParts.length < 2) {
             setError('Пожалуйста, введите полное ФИО (минимум имя и фамилию)')
             return
         }
 
-        // Здесь можно добавить логику сохранения ФИО в базу данных
-        // и генерирования сертификата
-
-        // Переходим на страницу с сертификатом
         closeModal()
         navigate(`/completed/${courseId}`, { state: { fullName } })
         setFullName('')

@@ -1,29 +1,240 @@
-.tests0 {
-    width: 100%;
-    height: 1800px;
-    background-color: red;
+@use '@/styles/helpers' as *;
+
+.about-page {
+  padding: 60px 0;
+  background: #fff;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #000;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+  
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &.rotate {
+        rotate: 3deg;
+    }
+  }
+
+//   &__item {
+//     padding-bottom: 30px;
+//   }
+
+  &__item-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #000;
+    line-height: 1.3;
+  }
+
+  &__item-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+  }
 }
 
-.test1 {
-    width: 100%;
-    height: 1800px;
-    background-color: var(--color-black);
+@media (max-width: 768px) {
+  .about-page {
+    padding: 40px 0;
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &__item-title {
+      font-size: 16px;
+    }
+
+    &__item-text {
+      font-size: 13px;
+    }
+
+    &__list {
+      gap: 30px;
+    }
+
+    &__item {
+      padding-bottom: 20px;
+    }
+  }
 }
 
-.test2 {
+.team-section {
+  padding: 60px 0;
+  background: #fff;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    color: #000;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #000;
+    margin: 0;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__image-container-top {
+    position: relative;
     width: 100%;
-    height: 1800px;
+    height: 280px;
+  }
+
+  &__image-top {
+    position: relative;
+    width: 85%;
+    height: 100%;
+    display: block;
+    border-radius: 50px;
+    border: 1px solid var(--color-blue);
+    object-fit: cover;
+    z-index: 10;
+  }
+
+  &__image-panel-top {
+    position: absolute;
     background-color: var(--color-blue);
+    border-radius: 50px;
+    width: 92%;
+    height: 95%;
+    top: 10px;
+    right: 40px;
+    rotate: -5deg;
+  }
+
+  &__image-bottom-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+  }
+
+  &__image-container-bottom {
+    position: relative;
+    width: calc(58% - 12.5px);
+    height: 320px;
+    flex-shrink: 0;
+  }
+
+  &__image-bottom {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50px;
+    border: 1px solid var(--color-blue);
+    object-fit: cover;
+    z-index: 10;
+  }
+
+  &__image-panel-bottom {
+    position: absolute;
+    background-color: var(--color-blue);
+    border-radius: 50px;
+    width: 88%;
+    height: 92%;
+    bottom: -15px;
+    left: -40px;
+    rotate: 8deg;
+  }
+
+  &__stars-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(50% - 12.5px);
+    height: 220px;
+  }
 }
 
-.test3 {
-    width: 100%;
-    height: 1800px;
-    background-color: green;
-}
+@media (max-width: 768px) {
+  .team-section {
+    padding: 40px 0;
 
-.test4 {
-    width: 100%;
-    height: 1800px;
-    background-color: brown;
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    &__image-container-top {
+      height: 200px;
+    }
+
+    &__image-panel-top,
+    &__image-panel-bottom {
+      display: none;
+    }
+
+    &__image-container-bottom {
+      width: 100%;
+      height: 200px;
+    }
+
+    &__image-bottom-wrapper {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    &__stars-icon {
+      width: 100%;
+      height: 80px;
+    }
+  }
 }
