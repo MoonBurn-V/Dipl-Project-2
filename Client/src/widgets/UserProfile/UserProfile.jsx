@@ -5,6 +5,7 @@ import Icon from '@/shared/Icon/Icon'
 import { useParams } from 'react-router-dom'
 import { useState, useRef, useEffect } from 'react'
 import { useEditProfile } from '@/features/editUserProfile/model/useEditProfile'
+import baseUser from '../../../assets/images/base-user.png'
 
 export const UserProfile = ({logout, type, userId, userName, userAvatar }) => {
 
@@ -17,7 +18,7 @@ export const UserProfile = ({logout, type, userId, userName, userAvatar }) => {
         if (userAvatar) {
             setAvatar(`/static/images/${userAvatar}`)
         } else {
-            setAvatar("/assets/images/base-user.png")
+            setAvatar(baseUser)
         }
     }, [userAvatar])
 
@@ -42,7 +43,7 @@ export const UserProfile = ({logout, type, userId, userName, userAvatar }) => {
     }
 
     const handelDelete = async () => {
-        setAvatar("/assets/images/base-user.png")
+        setAvatar(baseUser)
 
         const data = {
             id: userId,
@@ -58,7 +59,7 @@ export const UserProfile = ({logout, type, userId, userName, userAvatar }) => {
                 <div className="hab__user-panel">
                     <img
                         className="hab__user-image"
-                        src={avatar || "/assets/images/base-user.png"}
+                        src={avatar || baseUser}
                         alt="Аватар пользователя"
                     />
 

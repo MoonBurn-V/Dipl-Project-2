@@ -12,6 +12,16 @@ import Button from '@/shared/Button/Button'
 import Icon from '@/shared/Icon/Icon'
 import './Course.scss'
 
+import cardUser from '../../../assets/images/card-user.jpeg'
+import cardProgrammist from '../../../assets/images/card-programmist.jpg'
+import cardAdmin from '../../../assets/images/card-admin.jpg'
+
+const DEFAULT_IMAGES_BY_TYPE = {
+  'Для пользователей': cardUser,
+  'Для программистов': cardProgrammist,
+  'Для администраторов': cardAdmin,
+}
+
 const Course = () => {
 
   const { id: courseId } = useParams()
@@ -48,6 +58,12 @@ const Course = () => {
     navigate(`/courses/${courseId}/lesson/1`)
   }
 
+  const image = courseData?.image
+
+  const imagePath = image 
+    ? `/static/images/${image}` 
+    : DEFAULT_IMAGES_BY_TYPE[courseData?.type]
+
   if(loading) return (<ServerError loading={loading} error={error}/>)
   if(error) return (<ServerError loading={loading} error={error}/>)
 
@@ -58,7 +74,8 @@ const Course = () => {
         title="О курсе:"
         subtitle={courseData?.title}
         variant="text"
-        image="/assets/images/card-user.jpeg"
+        //image="/assets/images/card-user.jpeg"
+        image={imagePath}
         ready={!loading}
         text={courseData?.description || ""}
         button={

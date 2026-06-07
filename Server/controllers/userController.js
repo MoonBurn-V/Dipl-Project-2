@@ -60,8 +60,8 @@ class UserController {
 
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
-            // secure: process.env.NODE_ENV === 'production',
-            // sameSite: 'strict',
+            secure: true, 
+            sameSite: 'lax',
             secure: false, // Случай для dev режима
             sameSite: 'lax',
             maxAge: 30 * 24 * 60 * 60 * 1000
@@ -86,9 +86,9 @@ class UserController {
 
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
-            // secure: process.env.NODE_ENV === 'production',
-            // sameSite: 'strict',
-            secure: false, // Случай для dev режима
+            secure: true, 
+            sameSite: 'lax',
+            //secure: false, // Случай для dev режима
             sameSite: 'lax',
             maxAge: 30 * 24 * 60 * 60 * 1000
         })

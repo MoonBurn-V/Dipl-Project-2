@@ -6,6 +6,18 @@ import Icon from '@/shared/Icon/Icon'
 import { ServerError } from '@/widgets/ServerError/ServerError'
 import { CardListSkeleton } from '../CardListSkeleton/CardListSkeleton'
 
+// 1. Статически импортируем дефолтные изображения
+import cardUser from '../../../assets/images/card-user.jpeg'
+import cardProgrammist from '../../../assets/images/card-programmist.jpg'
+import cardAdmin from '../../../assets/images/card-admin.jpg'
+
+// 2. Создаем объект-мапу с импортированными переменными
+const DEFAULT_IMAGES_BY_TYPE = {
+  'Для пользователей': cardUser,
+  'Для программистов': cardProgrammist,
+  'Для администраторов': cardAdmin,
+}
+
 export const CardList = ({ coursesData, loading, error }) => {
 
   const courses = coursesData?.rows || []
@@ -23,15 +35,10 @@ export const CardList = ({ coursesData, loading, error }) => {
           red: difficulty === 'Сложный',
         })
 
-        const defaultImagesByType = {
-          'Для пользователей': 'card-user.jpeg',
-          'Для программистов': 'card-programmist.jpg',
-          'Для администраторов': 'card-admin.jpg',
-        }
-
+        // 3. Определяем итоговый путь к картинке
         const imagePath = image 
-        ? `/static/images/${image}` 
-        :  `/assets/images/${defaultImagesByType[type]}`
+          ? `/static/images/${image}` 
+          : DEFAULT_IMAGES_BY_TYPE[type]
         
         const priceText = price == null ? 'Бесплатно' : `${price.split('.')[0]} p`
 

@@ -2,6 +2,8 @@ import './Logo.scss'
 import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
 
+import Logo from '../../../assets/images/Logo.png'
+
 export default (props) => {
   const { className, loading = 'lazy', onClick } = props
 
@@ -17,7 +19,7 @@ export default (props) => {
     >
       <img
         className="logo__image"
-        src="/assets/images/Logo.png"
+        src={Logo}
         alt=""
         width={200}
         height={68}

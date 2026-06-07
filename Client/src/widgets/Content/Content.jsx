@@ -2,6 +2,7 @@ import './Content.scss'
 import { useState, useRef } from 'react'
 import Button from '@/shared/Button/Button'
 import Icon from '@/shared/Icon/Icon'
+import prev from '../../../assets/images/videoPoster.png'
 
 export const Content = ({ content, video }) => {
     const [showControls, setShowControls] = useState(false)
@@ -35,7 +36,7 @@ export const Content = ({ content, video }) => {
                         <video
                             ref={videoRef}
                             className="content__video-player"
-                            poster="/assets/images/videoPoster.png"
+                            poster={prev}
                             src={videoURL}
                             controls={showControls}
                             onClick={!showControls ? handlePlayVideo : undefined}

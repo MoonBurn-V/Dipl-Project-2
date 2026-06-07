@@ -5,6 +5,11 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Icon from '../../shared/Icon/Icon'
 
+// Импортируем изображения через ES-модули
+import comersImg from '../../../assets/images/comers.png'
+import comersTeachImg from '../../../assets/images/comersTeach.png'
+import comersTeach2Img from '../../../assets/images/comersTeach2.png'
+
 const About = () => {
 
   useTitle("MegaSkills | О нас")
@@ -84,7 +89,7 @@ const About = () => {
           
           <div className="about-page__content">
             <div ref={imageContainerRef} className="about-page__image-container">
-              <img className='audience__image left' src="/assets/images/comers.png" alt="ITsale" />
+              <img className='audience__image left' src={comersImg} alt="ITsale" />
             </div>
             
             <div ref={listRef} className="about-page__list rotate audience__info green">
@@ -110,7 +115,7 @@ const About = () => {
             </div>
             <div ref={teamRightRef} className="team-section__right">
               <div className="team-section__image-container-top">
-                <img className="team-section__image-top" src="/assets/images/comersTeach.png" alt="Команда" />
+                <img className="team-section__image-top" src={comersTeachImg} alt="Команда" />
                 <div className="team-section__image-panel-top" />
               </div>
               <div className="team-section__image-bottom-wrapper">
@@ -118,7 +123,7 @@ const About = () => {
                   <Icon name="BlueStars" />
                 </div>
                 <div className="team-section__image-container-bottom">
-                  <img className="team-section__image-bottom" src="/assets/images/comersTeach2.png" alt="Команда" />
+                  <img className="team-section__image-bottom" src={comersTeach2Img} alt="Команда" />
                   <div className="team-section__image-panel-bottom" />
                 </div>
               </div>

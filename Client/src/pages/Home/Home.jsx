@@ -4,6 +4,7 @@ import MainHero from '@/widgets/MainHero/MainHero'
 import About from '@/widgets/About/About'
 import Audience from '@/widgets/Audience/Audience'
 import Icon from '@/shared/Icon/Icon'
+import cityIMG from '../../../assets/images/city.jpg'
 
 const Home = () => {
 
@@ -26,7 +27,7 @@ const Home = () => {
           </>
         }
         variant="list"
-        image="/assets/images/city.jpg"
+        image={cityIMG}
         items={[
           {
             title: "Гарантированная востребованность и стабильность",

@@ -3,6 +3,11 @@ import Icon from '@/shared/Icon/Icon'
 import Button from '@/shared/Button/Button'
 import { useAudienceAnimation } from '../lib/hooks/useAudienceAnimation'
 
+// Импортируем изображения через ES-модули
+import audienceM1 from '../../../assets/images/audience-m1.jpg'
+import heroImg1 from '../../../assets/images/hero-img1.png'
+import heroImg2 from '../../../assets/images/hero-img2.png'
+
 const Audience = () => {
 
     const { blocL, blocR, ellipseGroup } = useAudienceAnimation()
@@ -42,8 +47,8 @@ const Audience = () => {
               </div>
 
               <div className="audience__image-container left">
-                <img className="audience__image-m left" src="assets/images/audience-m1.jpg" loading="lazy" alt="" />
-                <img className="audience__image left" src="assets/images/hero-img2.png" loading="lazy" alt="" />
+                <img className="audience__image-m left" src={audienceM1} loading="lazy" alt="" />
+                <img className="audience__image left" src={heroImg2} loading="lazy" alt="" />
               </div>
 
             </div>
@@ -51,8 +56,8 @@ const Audience = () => {
             <div className="audience__right" ref={blocR}>
 
               <div className="audience__image-container right">
-                <img className="audience__image right" src="assets/images/hero-img1.png" loading="lazy" alt="" />
-                <img className="audience__image-m right" src="assets/images/audience-m1.jpg" loading="lazy" alt="" />
+                <img className="audience__image right" src={heroImg1} loading="lazy" alt="" />
+                <img className="audience__image-m right" src={audienceM1} loading="lazy" alt="" />
               </div>
 
               <div className="audience__info blue">
@@ -72,7 +77,6 @@ const Audience = () => {
             <Button className="green" to="courses">Наши курсы</Button>
           </div>
         </div>
-
 
       </section>
     )

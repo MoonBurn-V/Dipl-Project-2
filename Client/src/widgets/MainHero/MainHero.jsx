@@ -3,6 +3,12 @@ import Button from '@/shared/Button/Button'
 import Icon from '@/shared/Icon/Icon'
 import { useHeroAnimation } from '../lib/hooks/useHeroAnimation'
 
+import heroImg1 from '../../../assets/images/hero-img1.png'
+import heroImg2 from '../../../assets/images/hero-img2.png'
+import heroImg3 from '../../../assets/images/hero-img3.png'
+import personGroup from '../../../assets/images/personGroup.png'
+import sixtyPercent from '../../../assets/images/60.png'
+
 const MainHero = () => {
 
     useHeroAnimation()
@@ -31,21 +37,21 @@ const MainHero = () => {
                     </div>
                 </div>
                 <div className="hero__image-container-1">
-                    <img className="hero__image1" src="assets/images/hero-img1.png" loading="eager" alt="" />
+                    <img className="hero__image1" src={heroImg1} loading="eager" alt="" />
                     <div className="hero__image-panel1" />
                 </div>
                 <div className="hero__image-container-2">
-                    <img className="hero__image2" src="assets/images/hero-img2.png" loading="eager" alt="" />
+                    <img className="hero__image2" src={heroImg2} loading="eager" alt="" />
                     <div className="hero__image-panel2" />
                 </div>
                 <div className="hero__image-container-3">
-                    <img className="hero__image3" src="assets/images/hero-img3.png" loading="eager" alt="" />
+                    <img className="hero__image3" src={heroImg3} loading="eager" alt="" />
                     <div className="hero__image-panel3" />
                 </div>
                 <div className="hero__bottom">
                     <div className="hero__bottom-student">
-                        <img className="hero__bottom-students" src="assets/images/personGroup.png" alt="" />
-                        <img className="hero__bottom-percent" src="assets/images/60.png" alt="" />
+                        <img className="hero__bottom-students" src={personGroup} alt="" />
+                        <img className="hero__bottom-percent" src={sixtyPercent} alt="" />
                         <p>Студентов работают<br />по специальности</p>
                     </div>
                     <div className="hero__bottom-motivation">

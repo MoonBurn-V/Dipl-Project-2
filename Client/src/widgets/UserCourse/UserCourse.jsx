@@ -5,6 +5,18 @@ import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
 import { useAuth } from '@/providers/AuthContext'
 
+// Импортируем дефолтные изображения
+import cardUser from '../../../assets/images/card-user.jpeg'
+import cardProgrammist from '../../../assets/images/card-programmist.jpg'
+import cardAdmin from '../../../assets/images/card-admin.jpg'
+
+// Создаем объект-мап с импортированными переменными
+const DEFAULT_IMAGES_BY_TYPE = {
+    'Для пользователей': cardUser,
+    'Для программистов': cardProgrammist,
+    'Для администраторов': cardAdmin,
+}
+
 export const UserCourse = ({progress, data}) => {
 
     const { user } = useAuth()
@@ -16,14 +28,9 @@ export const UserCourse = ({progress, data}) => {
         : `/courses/${data?.course_id}/lesson/${data?.lessons_completed}`
     const buttonText = isTeacher ? "Изменить" : (data.course_completed ? "Начать заново" : "Продолжить")
 
-    const defaultImagesByType = {
-        'Для пользователей': 'card-user.jpeg',
-        'Для программистов': 'card-programmist.jpg',
-        'Для администраторов': 'card-admin.jpg',
-    }
-    const serverImage = data?.image ? `/static/images/${data.image}` : null
-
-    const imagePath = serverImage ?? `/assets/images/${defaultImagesByType[data?.type]}`
+    const imagePath = data?.image 
+        ? `/static/images/${data.image}` 
+        : DEFAULT_IMAGES_BY_TYPE[data?.type]
 
     useGSAP(() => {
         if (isTeacher) return

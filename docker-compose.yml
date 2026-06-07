@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:15-alpine
+    image: postgres:18-alpine
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -9,10 +9,12 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
 
   backend:
     build: ./Server
+    restart: always
     ports:
       - "5000:5000"
     environment:
@@ -27,9 +29,14 @@ services:
       DB_PORT: 5432
       DB_HOST: db
       
+      # заменить на реальный URL фронтенда при деплое
+      #CLIENT_URL: "http://localhost:5173"
+      CLIENT_URL: "http://localhost"
       DATABASE_URL: postgres://postgres:VMB1298@db:5432/diploma
     depends_on:
       - db
+    volumes:
+      - ./Server/static:/app/static
 
   frontend:
     build: ./Client

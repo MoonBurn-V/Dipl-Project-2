@@ -2,11 +2,15 @@ import './CourseCompleted.scss'
 import Button from '@/shared/Button/Button'
 import { useLocation } from 'react-router-dom'
 
+import castom1 from '../../../assets/images/castom-01.png'
+import castom2 from '../../../assets/images/castom-02.png'
+
+
 const CourseCompleted = () => {
     const { state } = useLocation()
     const fullName = state?.fullName || ''
     const firstName = fullName.split(' ')[0] || ''
-    const imagePath = firstName === 'Петров' ?  '/assets/images/castom-02.png' : '/assets/images/castom-01.png'
+    const imagePath = firstName === 'Петров' ?  castom2 : castom1
 
     return (
         <section className='course-completed'>
