@@ -31,7 +31,7 @@ services:
       
       # заменить на реальный URL фронтенда при деплое
       #CLIENT_URL: "http://localhost:5173"
-      CLIENT_URL: "http://localhost"
+      CLIENT_URL: "http://135.106.159.188"
       DATABASE_URL: postgres://postgres:VMB1298@db:5432/diploma
     depends_on:
       - db
