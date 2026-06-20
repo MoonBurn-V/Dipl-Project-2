@@ -16,6 +16,7 @@ export const TestResultProvider = ({ children }) => {
                 questions: data.numberQuestions || 0,
                 answers: data.numberCorrectUserAnswers || 0,
                 failedAttempts: data.failedAttempts || 0,
+                testPassed: data.testPassed,
                 lessonId: lessonId
             })
         }

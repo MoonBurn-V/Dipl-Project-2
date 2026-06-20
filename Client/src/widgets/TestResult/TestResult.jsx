@@ -16,8 +16,8 @@ const TestResult = () => {
     const answers = testData?.answers || 0
     const failedAttempts = testData?.failedAttempts || 0
     const lessonId = testData?.lessonId || 0
-    const titleText = percent <= testData?.passing_percentage ? "Попробуй ещё" : "Тест пройден!"
-    const buttonText = percent <= testData?.passing_percentage ? "Попробовать ещё" : "Закрыть"
+    const titleText = !testData?.testPassed ? "Попробуй ещё" : "Тест пройден!"
+    const buttonText = !testData?.testPassed ? "Попробовать ещё" : "Закрыть"
     const counterRef = useRef(null)
 
     useGSAP(() => {

@@ -53,7 +53,7 @@ export const useTestController =(lessonId, test, userAnswers, setUserAnswers) =>
 
         const result = await getCheckTest(payload)
 
-        if (result.userPercent <= 66) {
+        if (result.testPassed == false) {
             nextFailedAttempts = failedAttempts + 1
             setFailedAttempts(nextFailedAttempts)
         }
