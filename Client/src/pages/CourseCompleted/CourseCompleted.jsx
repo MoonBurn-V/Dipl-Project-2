@@ -20,7 +20,7 @@ const CourseCompleted = () => {
                 src={imagePath}
                 alt="Ваш сертификат" 
             />
-            <a href="/assets/images/sert1.png" download="certificate.png">
+            <a href={imagePath} download="certificate.png">
                 <Button className="course-completed__button menu-button blue">
                     Загрузить
                 </Button>
