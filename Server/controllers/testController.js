@@ -3,7 +3,7 @@ const { Tests, Questions, Answers } = require('../models/models')
 class TestController {
     async create(req, res) {
         const { passing_percentage, status, lesson_id, questions } = req.body
-        
+        // какой то комментарий
         // Создаем тест с lesson_id
         const test = await Tests.create({ 
             passing_percentage, 
