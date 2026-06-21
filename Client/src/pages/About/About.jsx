@@ -5,7 +5,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Icon from '../../shared/Icon/Icon'
 
-// Импортируем изображения через ES-модули
 import comersImg from '../../../assets/images/comers.png'
 import comersTeachImg from '../../../assets/images/comersTeach.png'
 import comersTeach2Img from '../../../assets/images/comersTeach2.png'
@@ -109,7 +108,7 @@ const About = () => {
           <div className="team-section__content">
             <div ref={teamLeftRef} className="team-section__left">
               <h2 className="team-section__title">Команда ITsale</h2>
-              <p className="audience__info blue about">
+              <p className='about-par'>
                 Наши преподаватели — это действующие эксперты-практики. Каждый день они работают с боевым кодом, дорабатывают типовые и нетиповые конфигурации, сопровождают сервисы 1С и управляют проектами для реального бизнеса. Компания занимается не только обучением: мы сами разрабатываем, внедряем и поддерживаем решения на 1С, поэтому делимся только тем, что действительно прошло проверку в работе. Вы будете учиться на живых примерах, а не на абстрактных задачах. И для самых старательных и толковых студентов у нас открыта дверь в команду: начните с обучения — продолжите работой у нас. Это реальный шанс войти в профессию под руководством тех, кто сам делает продукты на 1С.
               </p>
             </div>

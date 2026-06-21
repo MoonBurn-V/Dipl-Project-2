@@ -1,11 +1,26 @@
 @use '@/styles/helpers' as *;
 
+.about-par {
+  padding: 30px 40px;
+  border-radius: var(--border-radius-s);
+  box-shadow: var(--shadow-black);
+  font-size: 22px;
+  position: relative;
+  //margin-top: 110px;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+
+  @include mobile-s {
+    margin: 0;
+  }
+}
+
 .about-page {
   padding: 60px 0;
   background: #fff;
 
   &__title {
-    font-size: 36px;
+    font-size: 48px;        /* было 36px */
     font-weight: 600;
     line-height: 1.3;
     text-align: center;
@@ -22,7 +37,6 @@
     gap: 100px;
     align-items: start;
   }
-  
 
   &__list {
     display: flex;
@@ -34,12 +48,8 @@
     }
   }
 
-//   &__item {
-//     padding-bottom: 30px;
-//   }
-
   &__item-title {
-    font-size: 20px;
+    font-size: 26px;        /* было 20px */
     font-weight: 600;
     margin-bottom: 12px;
     color: #000;
@@ -47,7 +57,7 @@
   }
 
   &__item-text {
-    font-size: 16px;
+    font-size: 20px;        /* было 16px */
     line-height: 1.6;
     margin: 0;
   }
@@ -58,7 +68,7 @@
     padding: 40px 0;
 
     &__title {
-      font-size: 24px;
+      font-size: 30px;      /* было 24px */
       margin-bottom: 40px;
     }
 
@@ -68,11 +78,11 @@
     }
 
     &__item-title {
-      font-size: 16px;
+      font-size: 20px;      /* было 16px */
     }
 
     &__item-text {
-      font-size: 13px;
+      font-size: 16px;      /* было 13px */
     }
 
     &__list {
@@ -102,7 +112,7 @@
   }
 
   &__title {
-    font-size: 36px;
+    font-size: 48px;        /* было 36px */
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 30px;
@@ -110,7 +120,7 @@
   }
 
   &__text {
-    font-size: 20px;
+    font-size: 26px;        /* было 20px */
     line-height: 1.6;
     color: #000;
     margin: 0;
@@ -204,12 +214,12 @@
     }
 
     &__title {
-      font-size: 24px;
+      font-size: 30px;      /* было 24px */
       margin-bottom: 20px;
     }
 
     &__text {
-      font-size: 14px;
+      font-size: 18px;      /* было 14px */
       line-height: 1.6;
     }
 
@@ -237,4 +247,10 @@
       height: 80px;
     }
   }
+}
+
+/* Дополнительно: увеличиваем текст с классом audience__info,
+   который используется в блоке команды */
+.audience__info.blue.about {
+  font-size: 20px;          /* подстройте под нужный размер */
 }
